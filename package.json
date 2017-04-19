@@ -1,1 +1,40 @@
-{     "devDependencies": {         "html-to-pdf": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-html-to-pdf",     "homepage": "https://github.com/npmtest/node-npmtest-html-to-pdf",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-html-to-pdf.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [html-to-pdf (v0.1.11)](https://github.com/ChaosEvoker/html-to-pdf)  [![npm package](https://img.shields.io/npm/v/npmtest-html-to-pdf.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-html-to-pdf) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-html-to-pdf.svg)](https://travis-ci.org/npmtest/node-npmtest-html-to-pdf)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "html-to-pdf": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-html-to-pdf",
+    "keywords": [
+        "coverage",
+        "test",
+        "html-to-pdf"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_html_to_pdf.js",
+    "name": "npmtest-html-to-pdf",
+    "nameAlias": "npmtest_html_to_pdf",
+    "nameOriginal": "npmtest-html-to-pdf",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-html-to-pdf.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
